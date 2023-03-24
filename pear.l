@@ -8,7 +8,7 @@ bool    { printf("TYPE_BOOL \n"); }
 [+-]?[0-9]+             { printf("INTEGER \n"); }
 [+-]?[0-9]*\.[0-9]+     { printf("FLOATING_POINT \n"); }
 '.'                     { printf("CHARACTER \n"); }
-"\""([^\"\n]|\\\")*\""  { printf("STRING \n"); }
+\"([^\"\n]*|\\.)+\"     { printf("STRING \n"); }
 
 if                      { printf("IF \n"); }
 else                    { printf("ELSE \n"); }
