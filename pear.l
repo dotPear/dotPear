@@ -1,30 +1,39 @@
+
 %%
-int     { printf("TYPE_INT \n"); }
-float   { printf("TYPE_FLOAT \n"); }
-char    { printf("TYPE_CHAR \n"); }
-string  { printf("TYPE_STRING \n"); }
-bool    { printf("TYPE_BOOL \n"); }
+int                                             { printf("TYPE_INT \n"); }
+float                                           { printf("TYPE_FLOAT \n"); }
+char                                            { printf("TYPE_CHAR \n"); }
+string                                          { printf("TYPE_STRING \n"); }
+bool                                            { printf("TYPE_BOOL \n"); }
 
-[+-]?[0-9]+             { printf("INTEGER \n"); }
-[+-]?[0-9]*\.[0-9]+     { printf("FLOATING_POINT \n"); }
-'.'                     { printf("CHARACTER \n"); }
-\"([^\"\n]*|\\.)+\"     { printf("STRING \n"); }
+[+-]?[0-9]+                                     { printf("INTEGER \n"); }
+[+-]?[0-9]*\.[0-9]+                             { printf("FLOATING_POINT \n"); }
+'.'                                             { printf("CHARACTER \n"); }
+\"([^\"\n]*|\\.)+\"                             { printf("STRING \n"); }
 
-if                      { printf("IF \n"); }
-else                    { printf("ELSE \n"); }
-while                   { printf("WHILE \n"); }
-print                   { printf("PRINT \n"); }
-scan                    { printf("SCAN \n"); }
+if                                              { printf("IF \n"); }
+else                                            { printf("ELSE \n"); }
+while                                           { printf("WHILE \n"); }
+print                                           { printf("PRINT \n"); }
+scan                                            { printf("SCAN \n"); }
 
-"==" | "!=" | ">" | "<" | ">=" | "<="   { printf("COMPARISON_OPERATOR \n"); }
+"=="|"!="|">"|"<"|">="|"<="                     { printf("COMPARISON_OPERATOR \n"); }
 
-[[:alpha:]_][[:alnum:]_]*    { printf("IDENTIFIER \n"); }
+[[:alpha:]_][[:alnum:]_]*                       { printf("IDENTIFIER \n"); }
+"("                                             { printf("LEFT_PARENTHESIS \n"); }
+")"                                             { printf("RIGHT_PARENTHESIS \n"); }
+"{"                                             { printf("LEFT_BRACE \n"); }
+"}"                                             { printf("RIGHT_BRACE \n");}
+";"                                             { printf("SEMICOLON \n"); }
+"="                                             { printf("ASSIGNMENT_OPERATOR \n"); }
+[+\-*\/]                                        { printf("ARITHMETIC_OPERATOR \n"); }
 
-"(" | ")" | "{" | "}" | "," | ";" | "=" | "+" | "-" | "*" | "/"  { printf("%s \n", yytext); }
 
-[ \t\n]                 /* Ignore whitespace */
+[ \t]+                                          /* Ignore whitespace */
 
-"//"(.)*\n              /* Ignore comments */
+"//"(.)*\n                                      /* Ignore comments */
 
-.                       { printf("ERROR: unrecognized character\n"); }
+"'.'"                                           { printf("CHARACTER \n"); }
+
+.                                               { printf("ERROR: unrecognized character\n"); }
 %%
