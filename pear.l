@@ -19,6 +19,9 @@ print                                           { printf("PRINT \n"); }
 scan                                            { printf("SCAN \n"); }
 
 "=="|"!="|">"|"<"|">="|"<="                     { printf("COMPARISON_OPERATOR \n"); }
+"&&"                                            { printf("LOGICAL_AND_OPERATOR \n"); }
+"||"                                            { printf("LOGICAL_OR_OPERATOR \n"); }
+"!"                                             { printf("LOGICAL_NOT_OPERATOR \n"); }
 
 [[:alpha:]_][[:alnum:]_]*                       { printf("IDENTIFIER \n"); }
 "("                                             { printf("LEFT_PARENTHESIS \n"); }
