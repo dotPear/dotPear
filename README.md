@@ -141,8 +141,8 @@ x = 10;
   * > **|**&nbsp; &nbsp;<---->&nbsp; &nbsp; `logical or`
   * > **+**&nbsp; &nbsp;<---->&nbsp; &nbsp; `addition`
   * > **-**&nbsp; &nbsp;<---->&nbsp; &nbsp; `subtraction`
-  * > \* &nbsp; &nbsp;<---->&nbsp; &nbsp; `multiplication`
-  * > **()**&nbsp; &nbsp;<---->&nbsp; &nbsp; `function call`
+  * > \* &nbsp; &nbsp;<---->&nbsp; &nbsp;   `multiplication`
+  * > **()**&nbsp; &nbsp;<---->&nbsp; &nbsp;`function call`
   
   
 - ## Other features:
