@@ -9,8 +9,8 @@
 ```
 <program> ::= <statement> | <program> <statement>
 
-<statement> ::= <variable_declaration> | <assignment_statement> | <function_declaration> 
-                 | <if_statement> | <loop_statement> | <io_statement> | <comment>
+<statement> ::= <variable_declaration> | <assignment_statement> | <function_declaration>
+| <if_statement> | <loop_statement> | <io_statement> | <comment>
 
 <variable_declaration> ::= <type> <identifier>
 
@@ -24,7 +24,17 @@
 
 <assignment_statement> ::= <identifier> "=" <expression>
 
-<expression> ::= <term> | <expression> "+" <term> | <expression> "-" <term>
+<expression> ::= <logical_term> | <expression> "||" <logical_term>
+
+<logical_term> ::= <logical_factor> | <logical_term> "&&" <logical_factor>
+
+<logical_factor> ::= <comparison> | "!" <logical_factor> | "(" <expression> ")"
+
+<comparison> ::= <additive_expression> <comparison_operator> <additive_expression>
+
+<comparison_operator> ::= "==" | "!=" | ">" | "<" | ">=" | "<="
+
+<additive_expression> ::= <term> | <additive_expression> "+" <term> | <additive_expression> "-" <term>
 
 <term> ::= <factor> | <term> "*" <factor> | <term> "/" <factor>
 
@@ -36,7 +46,7 @@
 
 <floating_point> ::= <integer> "." <integer>
 
-<function_declaration> ::= "function" <identifier> "(" <parameters> ")" <statement>
+<function_declaration> ::= "fun" <identifier> "(" <parameters> ")" <statement>
 
 <parameters> ::= <type> <identifier> | <parameters> "," <type> <identifier>
 
@@ -127,6 +137,14 @@ x = 10;
   * > **<**&nbsp; &nbsp;<---->&nbsp; &nbsp; `less than`
   * > **>=**&nbsp; &nbsp;<---->&nbsp; &nbsp; `greater than or equals`
   * > **<=**&nbsp; &nbsp;<---->&nbsp; &nbsp; `less than or equals`
+  * > **!**&nbsp; &nbsp;<---->&nbsp; &nbsp; `logical not`
+  * > **|**&nbsp; &nbsp;<---->&nbsp; &nbsp; `logical or`
+  * > **+**&nbsp; &nbsp;<---->&nbsp; &nbsp; `addition`
+  * > **-**&nbsp; &nbsp;<---->&nbsp; &nbsp; `subtraction`
+  * > \* &nbsp; &nbsp;<---->&nbsp; &nbsp; `multiplication`
+  * > **()**&nbsp; &nbsp;<---->&nbsp; &nbsp; `function call`
+  
+  
 - ## Other features:
   * Pear allows you to add comments to your code using the **//** syntax.Any text that follows `//` on a line is ignored by the compiler.
 - Example: 
@@ -161,11 +179,11 @@ x = 10;
     print(x);
        }
   ```
-  * Pear allows you to define and call functions. 
-  
+  * Pear allows you to define and call functions. Fun keyword is used to define a function
+
 - Example: 
   ```
-  int add(int a, int b) {
+    fun int add(int a, int b) {
     return a + b;
     }
   ```
