@@ -1,0 +1,32 @@
+// Variable declaration
+bool pearIsMostSweetLanguage = true;
+float pi = 3.14;
+string pearFounders = "Fatih, Elif, Yusuf";
+char pearFirstChar = 'p';
+int pearBornYear = 2023;
+
+// Conditional statement
+if (pearLove > everyThing) {
+  print "our pear love is greater than every thing";
+} else {
+  print "not possible";
+}
+
+// Loop
+while (iterator < 10) {
+  print "The value of a is: ";
+  iterator = iterator + 1;
+}
+
+// User input
+print "Enter a your old: ";
+scan input;
+
+// Comparison operators
+if (yourOld == 5) {
+  print "yourOld is equal to 5";
+} else if (a < 5) {
+  print "yourOld is less than 5";
+} else {
+  print "yourOld is greater than 5";
+}
