@@ -45,3 +45,8 @@ if ((a == 5) && (b == 10)) {
 if ((a == 5) || (b == 10)) {
   print "a is equal to 5 or b is equal to 10";
 }
+
+// function 
+int fun test(int a , int b) {
+  return a + b;
+}

@@ -17,6 +17,9 @@ else                                            { printf("ELSE \n"); }
 while                                           { printf("WHILE \n"); }
 print                                           { printf("PRINT \n"); }
 scan                                            { printf("SCAN \n"); }
+fun                                             { printf("FUNCTION \n"); }
+return                                          { printf("RETURN \n"); }
+
 
 "=="|"!="|">"|"<"|">="|"<="                     { printf("COMPARISON_OPERATOR \n"); }
 "&&"                                            { printf("LOGICAL_AND_OPERATOR \n"); }
@@ -30,6 +33,7 @@ scan                                            { printf("SCAN \n"); }
 "}"                                             { printf("RIGHT_BRACE \n");}
 ";"                                             { printf("SEMICOLON \n"); }
 "="                                             { printf("ASSIGNMENT_OPERATOR \n"); }
+","                                             { printf("COMMA \n"); }      
 [+\-*\/]                                        { printf("ARITHMETIC_OPERATOR \n"); }
 
 
